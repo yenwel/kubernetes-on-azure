@@ -13,7 +13,7 @@ az group create --location westeurope --name TestRegistryMHRG
 az acr create --name TestRegistryMH --resource-group TestRegistryMHRG --sku Basic --admin-enabled true
 # 4 make azure kubernetes service
 az group create --location westeurope --name Testk8sMHRG
-az aks create -g Testk8sMHRG -n Testk8sMH --location westeurope --node-vm-size Standard_F1s --generate-ssh-keys
+az aks create -g Testk8sMHRG -n Testk8sMH --location westeurope --node-vm-size Standard_F1s --generate-ssh-keys --enable-rbac 
 # 5 login to dashboard
 az aks install-cli
 az aks get-credentials --resource-group Testk8sMHRG --name Testk8sMH
