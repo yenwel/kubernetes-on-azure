@@ -2,6 +2,8 @@
 # https://docs.microsoft.com/sl-si/azure/aks/kubernetes-helm
 # https://kubecloud.io/kubernetes-dashboard-on-arm-with-rbac-61309310a640
 # https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest
+# https://docs.microsoft.com/en-us/azure/container-registry/container-registry-authentication
+# https://github.com/tkubica12/kubernetes-demo/blob/master/docs/rbac.md
 
 # 1 install azure cli
 choco install azure-cli -y
@@ -18,4 +20,6 @@ az aks create -g Testk8sMHRG -n Testk8sMH --location westeurope --node-vm-size S
 az aks install-cli
 az aks get-credentials --resource-group Testk8sMHRG --name Testk8sMH
 az aks browse --resource-group Testk8sMHRG --name Testk8sMH
-
+# 6 login to acr (not in conemu!)
+ az acr login --name TestRegistryMH
+ docker login etc
